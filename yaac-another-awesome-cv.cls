@@ -77,7 +77,9 @@
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+%\definecolor{basecolor}{HTML}{000066}       %BLUE Mahi
+\definecolor{basecolor}{HTML}{4c0070}       %BLUE
+
 
 \ifundef{\@green} {
   \ifundef{\@red} {
@@ -94,7 +96,8 @@
 }
 { \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
 
-\definecolor{darkGrey}{HTML}{989898}
+%\definecolor{darkGrey}{HTML}{989898} Mahi
+\definecolor{darkGrey}{HTML}{605f5f}
 
 \colorlet{linkcolor}{basecolor}
 \colorlet{accentcolor}{linkcolor!90}
@@ -437,6 +440,16 @@
 %   {<techno1>,<techno2>}
 \newcommand\project[5]{
   \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
+   \textbf{\textsc{#1}} \hfill \textsc{#2}\smallskip\\
+    #3\\
+    #4\smallskip\\
+    \footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
+  \end{minipage}
+  \\*
+}
+
+\newcommand\publication[5]{
+  \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
     \textbf{\textsc{#1}} \hfill \textsc{#2}\smallskip\\
     #3\\
     #4\smallskip\\
@@ -471,6 +484,7 @@
       \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
       \quad \mailSymbol & \href{mailto:#4}{#4} \\  
       \quad \faPhone & #5 \\
+   %  \quad  \mobileSymbol & {#5}  \\%[1]{\socialtext{\mobileSymbol}{#5}} Mahi
     \end{tabular}
   \end{minipage}%
   }
