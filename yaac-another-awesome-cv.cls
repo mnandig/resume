@@ -355,6 +355,7 @@
 
 % Define the 'scholarship' environment
 \newenvironment{scholarship}{%
+ \vspace{0.5em} 
   \begin{tabular}{Y p{\rightcolumnlength}}
 }{%
   \end{tabular}
@@ -471,14 +472,15 @@
 
 % Define the 'referencees' environment
 \newenvironment{referees}{%
-}{%
-  \hfill
-  \bigskip
+}{
+  %\hfill
+  %\bigskip
 }
 
 \newcommand*\referee[5]{
-  \hspace{1em}
-  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
+  \vspace{0.5em} % mahi change this 1.5em for four references
+  %\begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
+ \begin{minipage}[t]{0.35\textwidth} % Mahi for three references in one row change width to .35 and for two row change width to 0.5
     \begin{tabular}{>{}l >{}l}
       \multicolumn{2}{l}{\textbf{#1}}\\
       \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
